@@ -28,4 +28,4 @@ const ticketSchema = mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Ticker", ticketSchema);
+module.exports = mongoose.model("Ticket", ticketSchema);
