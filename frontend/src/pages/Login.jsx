@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaSignInAlt, FaUser } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaSignInAlt, FaUser } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
 import { login, reset } from "../features/Auth/authSlice";
@@ -12,6 +12,8 @@ const Login = () => {
     email: "",
     password: "",
   });
+
+  const [showPassword, setShowPassword] = useState(false);
 
   const { name, email, password } = formData;
 
@@ -78,7 +80,7 @@ const Login = () => {
           </div>
           <div className="form-group">
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               className="formControl"
               id="password"
               name="password"
@@ -87,6 +89,17 @@ const Login = () => {
               placeholder="Enter your password"
               required
             />
+            {showPassword ? (
+              <FaEyeSlash
+                onClick={() => setShowPassword(!showPassword)}
+                className="icon"
+              />
+            ) : (
+              <FaEye
+                className="icon"
+                onClick={() => setShowPassword(!showPassword)}
+              />
+            )}
           </div>
 
           <div className="form-group">

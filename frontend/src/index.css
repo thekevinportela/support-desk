@@ -116,7 +116,8 @@ h3 {
 }
 
 .form-group {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .form-group input,
@@ -126,7 +127,7 @@ h3 {
   padding: 10px;
   border: 1px solid #e6e6e6;
   border-radius: 5px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   font-family: inherit;
 }
 
@@ -375,6 +376,18 @@ footer {
   border-color: #000 transparent #555 transparent;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
+}
+
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 2px;
+  position: absolute;
+  box-sizing: border-box;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  justify-self: center;
 }
 
 @keyframes spin {
